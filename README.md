@@ -13,15 +13,16 @@ library(devtools)
 
 install_github("sa4khan/JMR")
 
-# Main functions for Recurrent Event Data Analysis
+# Functions for Recurrent Event Data Analysis
 
-**survreg.aft**: Fit a parametric AFT model to time-to-event data
+**etime.reg**: Fit a parametric time-to-event regression model. It includes both standard (non-recurrent) survival data analysis and recurrent event
+data analysis.
 
-**surv.resid**: Cox-Snell residuals of survreg.aft fits
+**etime.resid**: Cox-Snell residual analysis of the etime.reg fit.
 
-**LR.test**: Likelihood ratio test for Weibull as a submodel of the exponentiated Weibull or generalized gamma model
+**LR.test**: Likelihood ratio test for Weibull AFT as a submodel of the exponentiated Weibull AFT and generalized gamma AFT models.
 
-**sim.rec**: Simulate recurrent event data for fixed covariates
+**sim.rec**: Simulate recurrent event data for fixed covariates.
 
 # Main functions for Joint Modeling
 
