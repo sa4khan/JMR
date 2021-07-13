@@ -24,7 +24,7 @@ data analysis. Available options are Weibull, log-normal, log-logistic, exponent
 
 **sim.rec**: Simulate recurrent event data for fixed covariates.
 
-# Main functions for Joint Modeling
+# Functions for Joint Modeling
 
 **jm.reg**: Bayesian fit of a joint model. The time-to-event process is described using a parametric survival model (available options are Weibull, log-normal, log-logistic, exponentiated Weibull and generalized gamma AFT models, and Weibull and generalized log-logistic PH models), and the longitudinal process is modeled using the linear mixed-effects model. It is assumed that the association between the two submodels is induced by the longitudinal value. The Markov Chain Monte Carlo (MCMC) for Bayesian inference is implemented via the "rstan" package, which provides the R interface to STAN.
 
