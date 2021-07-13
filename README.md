@@ -16,7 +16,7 @@ install_github("sa4khan/JMR")
 # Functions for Recurrent Event Data Analysis
 
 **etime.reg**: Fit a parametric time-to-event regression model. It includes both standard (non-recurrent) survival data analysis and recurrent event
-data analysis.
+data analysis. Available options are Weibull, log-normal, log-logistic, exponentiated Weibull and generalized gamma AFT models, and Weibull and generalized log-logistic PH models.
 
 **etime.resid**: Cox-Snell residual analysis of the etime.reg fit.
 
@@ -26,18 +26,23 @@ data analysis.
 
 # Main functions for Joint Modeling
 
-**jmreg.aft**: Fit a joint model
+**jm.reg**: Bayesian fit of a joint model. The time-to-event process is described using a parametric survival model (available options are Weibull, log-normal, log-logistic, exponentiated Weibull and generalized gamma AFT models, and Weibull and generalized log-logistic PH models), and the longitudinal process is modeled using the linear mixed-effects model. It is assumed that the association between the two submodels is induced by the longitudinal value. The Markov Chain Monte Carlo (MCMC) for Bayesian inference is implemented via the "rstan" package, which provides the R interface to STAN.
 
-**jm.summary**: Summary of a joint model fit
+**jm.summary**: Produces a summary of the Bayesian joint model fit. It uses a jm.reg fit as its argument.
 
-**jm.resid.plot**: Cox-Snell residual plot for the event process of the joint model
+**jm.icriteria**: Computes DIC and WAIC for a Bayesian joint model fit. It uses a jm.reg fit as its argument.
 
-**jm.reffects**: Posterior means/medians of the random effects from a joint model fit
+**jm.resid**: Returns posterior summaries of the Cox-Snell residuals for a jm.reg fit. It also produces a residual plot.
 
-**jm.DIC**: Computes DIC for Bayesian fit of the joint model
+**jm.plots**: This function produces plots for posterior analysis. It includes pair plots, rhat values as either points or a histogram, ratios of effective sample
+size to total sample size as either points or a histogram, trace plots, density plots, and plots of uncertainty intervals.
 
-**jm.WAIC**: Computes WAIC for Bayesian fit of the joint model
+**jm.reffects**: Returns posterior summary of the random effects.
 
-**jm.surv**: Dynamic predictions of survival probabilites
+**jm.surv**: Dynamic predictions of survival probabilites.
 
-**jm.sim**: Simulate from joint models
+**jm.lppredict**: Given a jm.reg fit and a data frame, this function produces marginal predictions (population-level) for the longitudinal outcome.
+
+**jm.lspredict**: Given a jm.reg fit and a data frame, this function produces subject-specific predictions for the longitudinal outcome.
+
+**jm.sim**: This function simulates longitudinal responses and event times from joint models. Available options for the time-to-event submodel are Weibull AFT, log-logistic AFT, log-normal AFT, exponentiated Weibull AFT, generalized gamma AFT, Weibull PH and generalized log-logistic PH.
