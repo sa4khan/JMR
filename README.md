@@ -5,7 +5,7 @@ log-logistic proportional hazards models. This package also includes residual an
 
 # Inatallation: 
 
-Step 1: Install the following R packages: rstan (>= 2.18.1), bayesplot (>= 1.7.1), coda (>= 0.19-3), numDeriv (>= 2016.8-1.1), Rmpfr (>= 0.8-1)
+Step 1: Install the following R packages: rstan (>= 2.18.1), bayesplot (>= 1.7.1), coda (>= 0.19-3), numDeriv (>= 2016.8-1.1), Rmpfr (>= 0.8-1), and devtools
 
 Ste 2: Install Rtools, and put Rtools on the PATH (see instructions in CRAN website https://cran.r-project.org/).
 
